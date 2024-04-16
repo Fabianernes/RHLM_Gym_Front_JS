@@ -1,6 +1,12 @@
-@font-face {
-    font-family: 'Lato';
-    src: url('https://fonts.google.com/specimen/Lato') format('truetype');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -31,14 +37,15 @@ body::before {
 
 .container input[type="text"] {
     padding: 15px; /* Aumenta el relleno */
-    width: 300px; /* Aumenta el ancho */
+    width: 500px; /* Aumenta el ancho */
+    height: 70px;
     margin-bottom: 20px;
     display: block;
     font-size: 18px; /* Aumenta el tamaño de la fuente */
 }
 
 .container button {
-    padding: 15px 30px; /* Aumenta el relleno */
+    padding: 20px 45px; /* Aumenta el relleno */
     background-color: #000000;
     color: #fff;
     border: none;
@@ -79,6 +86,8 @@ body::before {
 }
 
 .nav-links a {
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Quitar subrayado de los enlaces */
     margin-left: 10px; /* Añade un pequeño margen entre los enlaces */
 }
   

@@ -11,6 +11,17 @@
 </head>
 <body>
 
+  <header class="header">
+    <div class="logo">
+      RHLM GYM
+    </div>
+    <nav class="nav-links">
+      <a href="http://127.0.0.7:5500/auth/dashboard.html">Inicio</a>
+      <a href="http://127.0.0.7:5500/auth/user/user.html">Usuarios</a>
+      <a href="http://127.0.0.7:5500">Cerrar sesión</a>
+    </nav>
+  </header>
+
 <div class="container mt-5">
     <div class="title text-center">
         <h1 class="display-5">
@@ -92,8 +103,7 @@
               <input type="text" class="form-control" id="editIdMaquina">
             </div>
             <div class="form-group">
-              <label for="editNombreMaquina">Nombre de Máquina:</label>
-              <input type="text" class="form-control" id="editNombreMaquina">
+              <input type="hidden" type="text" class="form-control" id="editNombreMaquina">
             </div>
             <div class="form-group">
               <input type="hidden" id="editRutinaId" name="editRutinaId">

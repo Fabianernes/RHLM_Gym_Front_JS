@@ -13,14 +13,17 @@
           RHLM GYM
         </div>
         <nav class="nav-links">
-          <a routerLink="/" routerLinkActive="active">Rutinas</a>
-          <a routerLink="/about" routerLinkActive="active">Cerrar sesión</a>
+          <a href="http://127.0.0.7:5500/auth/rutina/rutina.html">Rutinas</a>
+          <a href="http://127.0.0.7:5500">Cerrar sesión</a>
         </nav>
       </header>
 
     <div class="container">
-        <input type="text" class="form-field" placeholder="Ingrese el documento">
-        <button>Ingresar</button>
+        <input type="text" class="form-field" placeholder="Ingrese el documento" id="documento">
+        <button onclick="validarDocumento()">Ingresar</button>
+        <p id="mensaje-error" style="color: red;"></p>
     </div>
+
+    <script src="dashboard.js"></script>
 </body>
 </html>

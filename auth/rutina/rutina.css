@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    top: 100px;
     position: relative; /* Asegura que el contenido se superpone al fondo */
 }
 
@@ -38,4 +39,46 @@ body::before {
   .form-field:focus {
     border-color: #b82424;
   }
+ 
+
+  .header {
+    background-color: #000000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-size: 25px;
+    
+}
+
+.container {
+    margin-top: 220px; /* Ajusta este valor según el tamaño del encabezado */
+    text-align: center;
+}
+
+  .logo {
+    float: left; /* Logo a la izquierda */
+}
+
+.nav-links {
+    float: right; /* Enlaces de navegación a la derecha */
+    margin-right: 40px; 
+}
+
+.nav-links a {
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+    margin-left: 10px; /* Añade un pequeño margen entre los enlaces */
+}
   
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .nav-links .active {
+    font-weight: bold; /* Style for the active link */
+  }
