@@ -10,7 +10,14 @@ function getAllUsuarios() {
             return response.json();
         })
         .then(usuarios => {
-            displayUserInfo(usuarios[0]); // Mostrar info del primer usuario
+            // Buscar el usuario con ID 13
+            const usuarioId13 = usuarios.find(usuario => usuario.id === 13);
+            if (usuarioId13) {
+                // Si se encontró el usuario con ID 13, mostrar su información
+                displayUserInfo(usuarioId13);
+            } else {
+                console.error('No se encontró el usuario con ID 13');
+            }
         })
         .catch(error => {
             console.error('Error al obtener la lista de usuarios:', error);
@@ -31,7 +38,7 @@ getAllUsuarios();
 
 function cargarDatosUsuarioParaEditar(id) {
     // Obtener los datos del usuario desde tu servidor (por ejemplo, mediante una solicitud GET)
-    fetch(`${BASE_URL}/findById/7`)
+    fetch(`${BASE_URL}/findById/13`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('No se pudo obtener el usuario');
@@ -77,7 +84,7 @@ function guardarCambiosUsuario(event) {
         tipoCuerpo: tipoCuerpo
     };
 
-    fetch(`${BASE_URL}/update/7`, { // Ajustamos la URL para la actualización del usuario
+    fetch(`${BASE_URL}/update/13`, { // Ajustamos la URL para la actualización del usuario
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'

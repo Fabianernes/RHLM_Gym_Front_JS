@@ -16,10 +16,11 @@
           Baby, ponte las Yeezy, las Yeezy
           Y mámame el bicho en el Panamera (Skrrt)</p>
       </div>
-      <form class="form" method="">
-        <input type="email" class="form-field animation a3" name="" placeholder="Chamaquito">
-        <input type="password" class="form-field animation a4" name="" placeholder="Clave">
-        <a href="auth/dashboard.html" class="button animation a6">BRRR</a>
+      <form class="form" id="login-form"> <!-- Agregado id al formulario -->
+        <input type="text" id="usuario" class="form-field animation a3" name="usuario" placeholder="Chamaquito"> <!-- Agregado id al campo de usuario -->
+        <input type="password" id="contra" class="form-field animation a4" name="contra" placeholder="Clave"> <!-- Agregado id al campo de contraseña -->
+        <a class="button animation a6" onclick="login()">BRRR</a> <!-- Agregado evento onclick para llamar a la función login() -->
+        <p id="error-message" class="error-message"></p> <!-- Agregado elemento para mostrar mensajes de error -->
       </form>
     </div>
     <div id="right"></div>

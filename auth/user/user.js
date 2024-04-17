@@ -89,10 +89,10 @@ function createUsuario(event) {
 
 
 function cargarDatosUsuarioParaEditar(id) {
-    fetch(`${BASE_URL}/update/${id}`)
+    fetch(`${BASE_URL}/findById/${id}`)
         .then(response => {
             if (!response.ok) {
-                throw new Error('No se pudo obtener el usuario');
+                throw new Error('No se pudo obtener el usuario para editar');
             }
             return response.json();
         })
@@ -111,6 +111,7 @@ function cargarDatosUsuarioParaEditar(id) {
             console.error('Error al obtener el usuario para editar:', error);
         });
 }
+
 
 function guardarCambiosUsuario(event) {
     event.preventDefault(); // Evitar que el formulario se envíe automáticamente
@@ -138,13 +139,13 @@ function guardarCambiosUsuario(event) {
     };
 
     // Enviar los datos al servidor mediante una solicitud PUT
-    fetch(BASE_URL, {
+    fetch(`${BASE_URL}/update/${id}`, { // Incluye el ID del usuario en la URL
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    })
+    })    
     .then(response => {
         if (!response.ok) {
             throw new Error('No se pudieron guardar los cambios en el usuario');

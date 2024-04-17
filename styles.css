@@ -203,3 +203,8 @@ body {
     width: 500px;
   }
 }
+
+.error-message {
+  color: red; /* Cambia el color del texto a rojo */
+  margin-top: 10px; /* Agrega un espacio arriba para separar el mensaje del resto del formulario */
+}
