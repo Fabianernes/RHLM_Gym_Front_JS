@@ -204,6 +204,18 @@ body {
   }
 }
 
+.animation.a2 {
+  text-align: center;
+}
+
+#right {
+  background-image: url('assets/emma.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* . */
+
 .error-message {
   color: red; /* Cambia el color del texto a rojo */
   margin-top: 10px; /* Agrega un espacio arriba para separar el mensaje del resto del formulario */

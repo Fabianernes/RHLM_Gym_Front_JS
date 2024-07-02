@@ -8,23 +8,42 @@
 </head>
 <body>
 
-    <header class="header">
-        <div class="logo">
-          RHLM GYM
-        </div>
-        <nav class="nav-links">
-          <a href="http://127.0.0.7:5500/auth/rutina/rutina.html">Rutinas</a>
-          <a href="http://127.0.0.7:5500/auth/user/user.html">Usuarios</a>
-          <a href="http://127.0.0.7:5500">Cerrar sesión</a>
-        </nav>
-      </header>
+<header class="header">
+    <div class="logo">
+        RHLM GYM
+    </div>
+    <nav class="nav-links">
+        <a href="http://localhost:5500/auth/rutina/rutina.html">Rutinas</a>
+        <a href="http://localhost:5500/auth/user/user.html">Usuarios</a>
+        <a href="http://localhost:5500">Cerrar sesión</a>
+    </nav>
+</header>
 
-    <div class="container">
+<div class="container">
+    <div class="form-container">
         <input type="text" class="form-field" placeholder="Ingrese el documento" id="documento">
-        <button onclick="validarDocumento()">Ingresar</button>
+        <button role="button" class="button-name"onclick="validarDocumento()">Ingresar</button>
         <p id="mensaje-error" style="color: red;"></p>
     </div>
 
-    <script src="dashboard.js"></script>
+    <div class="table-container">
+        <table id="tabla-asistencias">
+            <thead>
+                <tr>
+                    <th>Nombre Usuario</th>
+                    <th>Inicio de la suscripción</th>
+                    <th>Fin de la suscripción</th>
+                    <th>Suscripción</th>
+                    <th>Acciones</th> <!-- Nueva columna para el botón de eliminar -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se llenará dinámicamente con JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="dashboard.js"></script>
 </body>
 </html>

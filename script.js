@@ -7,6 +7,7 @@ function randombg() {
     ];
     document.getElementById("right").style.backgroundImage = bigSize[random];
   }
+
   
   function login() {
     const usuario = document.getElementById('usuario').value;
@@ -32,7 +33,7 @@ function randombg() {
     })
     .then(token => {
         localStorage.setItem('token', token);
-        window.location.href = 'http://127.0.0.7:5500/auth/dashboard.html';
+        window.location.href = 'http://localhost:5500/auth/dashboard.html';
     })
     .catch(error => {
         console.error('Error de autenticación:', error);
