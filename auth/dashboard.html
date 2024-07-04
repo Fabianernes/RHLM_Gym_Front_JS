@@ -20,21 +20,23 @@
 </header>
 
 <div class="container">
+<div class="content">
     <div class="form-container">
         <input type="text" class="form-field" placeholder="Ingrese el documento" id="documento">
-        <button role="button" class="button-name"onclick="validarDocumento()">Ingresar</button>
-        <p id="mensaje-error" style="color: red;"></p>
+        <button role="button" class="button-name button-eliminar" onclick="validarDocumento()">Ingresar</button>
     </div>
-
+    <p id="mensaje-error" style="color: red;"></p>
+</div>
+<div class="content">
     <div class="table-container">
         <table id="tabla-asistencias">
             <thead>
                 <tr>
-                    <th>Nombre Usuario</th>
-                    <th>Inicio de la suscripción</th>
-                    <th>Fin de la suscripción</th>
-                    <th>Suscripción</th>
-                    <th>Acciones</th> <!-- Nueva columna para el botón de eliminar -->
+                    <th class="color-white">Nombre</th>
+                    <th class="color-white">Inicio de la suscripción</th>
+                    <th class="color-white">Fin de la suscripción</th>
+                    <th class="color-white">Suscripción</th>
+                    <th class="color-white">Acciones</th> 
                 </tr>
             </thead>
             <tbody>
@@ -43,7 +45,8 @@
         </table>
     </div>
 </div>
-
+</div>
+<img src="/assets/rhlmgym2.png" alt="RHLM" class="corner-image">
 <script src="dashboard.js"></script>
 </body>
 </html>

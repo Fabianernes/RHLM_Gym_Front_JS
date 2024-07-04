@@ -50,7 +50,7 @@ function mostrarAsistencias(asistencias) {
             <td>${new Date(asistencia.fechaFin).toLocaleDateString()}</td>
             <td>${asistencia.nombreSuscripcion}</td>
             <td>
-                <button role="button" class="button-ingresar" onclick="eliminarAsistencia(${asistencia.id})">Eliminar</button>
+                <button role="button" class="button-eliminar" onclick="eliminarAsistencia(${asistencia.id})">Eliminar</button>
             </td>
         `;
         tablaBody.insertBefore(row, tablaBody.firstChild);

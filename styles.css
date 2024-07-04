@@ -74,6 +74,7 @@ body {
   flex-direction: column;
   text-align: center;
   margin: 0 auto;
+  
 }
 
 .form > p {
@@ -102,17 +103,6 @@ body {
   border-color: #000000;
 }
 
-.form > .button {
-  padding: 12px 10px;
-  border: 0;
-  background: #b81414;
-  border-radius: 3px;
-  margin-top: 10px;
-  color: #fff;
-  letter-spacing: 1px;
-  font-family: sans-serif;
-  text-decoration: none;
-}
 
 .animation {
 -webkit-animation-name: fadeInUp;
@@ -217,6 +207,60 @@ body {
 /* . */
 
 .error-message {
+  text-align: center;
   color: red; /* Cambia el color del texto a rojo */
   margin-top: 10px; /* Agrega un espacio arriba para separar el mensaje del resto del formulario */
+
+}
+
+/* ========================= */
+
+
+.buttonbrr {
+ padding: 15px 25px;
+ border: unset;
+ border-radius: 15px;
+ color: #ffffff;
+ z-index: 1;
+ background: #000000;
+ position: relative;
+ font-weight: 1000;
+ font-size: 17px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+ margin-top: 10px;
+}
+
+.buttonbrr::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 0;
+ border-radius: 15px;
+ background-color: #dc1313;
+ z-index: -1;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 500ms
+}
+
+.buttonbrr:hover {
+ color: #e8e8e8;
+}
+
+.buttonbrr:hover::before {
+ width: 100%;
+}
+
+.corner-image {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  width: 220px; /* Ajusta el tamaño según sea necesario */
+  height: auto;
+  z-index: 1000; /* Asegúrate de que la imagen esté encima de otros elementos */
 }
