@@ -62,6 +62,8 @@ body::before {
 
 .logo {
   float: left; /* Logo a la izquierda */
+  width: 100px;
+  height: auto;
 }
 
 .nav-links {

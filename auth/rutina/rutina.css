@@ -60,8 +60,10 @@ body::before {
     text-align: center;
 }
 
-  .logo {
-    float: left; /* Logo a la izquierda */
+.logo {
+  float: left; /* Logo a la izquierda */
+  width: 100px;
+  height: auto;
 }
 
 .nav-links {
