@@ -1,8 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
-  top: 100px;
-  position: relative; /* Asegura que el contenido se superpone al fondo */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-repeat: no-repeat;
 }
 
 body::before {
@@ -16,6 +31,54 @@ body::before {
   background-size: cover;
   z-index: -1; /* Coloca el fondo detrás del contenido */
   opacity: 0.9; /* Opacidad solo aplicada a la imagen de fondo */
+}
+
+
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.8);
+	color: #383535;
+    text-align: center;
+}
+
+thead {
+	tr {
+		background-color: #55608f;
+	}
+}
+
+.color-white{
+  color: #FFF;
+}
+
+.container input[type="text"] {
+  padding: 15px; /* Aumenta el relleno */
+  width: 400px; /* Aumenta el ancho */
+  height: 40px;
+  margin-bottom: 20px;
+  display: block;
+  font-size: 18px; /* Aumenta el tamaño de la fuente */
+}
+
+.container button {
+  padding: 10px 15px; /* Aumenta el relleno */
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 18px; /* Aumenta el tamaño de la fuente */
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+
+.button-name:hover {
+  background-color: #21b644 !important;
 }
 
 /* Cambiar el color del título */

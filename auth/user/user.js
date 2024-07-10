@@ -41,6 +41,23 @@ function displayUsuarios(usuarios) {
         usuariosListElement.appendChild(row);
     });
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const formContainer = document.getElementById('formContainer');
+    const btnAgregarUsuario = document.getElementById('btnAgregarUsuario');
+
+    btnAgregarUsuario.addEventListener('click', () => {
+        if (formContainer.style.display === 'none') {
+            formContainer.style.display = 'block';
+            btnAgregarUsuario.textContent = 'Cerrar Formulario';
+        } else {
+            formContainer.style.display = 'none';
+            btnAgregarUsuario.textContent = 'Agregar Usuario';
+        }
+    });
+
+    document.getElementById('usuario-form').addEventListener('submit', createUsuario);
+});
+
 
 function createUsuario(event) {
     event.preventDefault(); // Evita que el formulario se envíe automáticamente
@@ -99,7 +116,7 @@ function cargarDatosUsuarioParaEditar(id) {
         .then(usuario => {
             // Llenar el formulario con los datos del usuario
             document.getElementById('editIdPersona').value = usuario.idPersona;
-            document.getElementById('editIdSuscripcion').value = usuario.idSuscripcion;
+            document.getElementById('editIdSuscripcion').value = usuario.idSuscripcion.nm;
             document.getElementById('editPeso').value = usuario.peso;
             document.getElementById('editEstatura').value = usuario.estatura;
             document.getElementById('editTipoCuerpo').value = usuario.tipoCuerpo;
