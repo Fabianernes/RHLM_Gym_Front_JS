@@ -32,7 +32,7 @@ async function validarDocumento() {
         });
 
         if (response.ok) {
-            await cargarAsistencias();
+            // await cargarAsistencias();
             let result = await response.json();
             let diasRestantes = result.diasRestantes;
 
@@ -45,6 +45,7 @@ async function validarDocumento() {
                   background: "#5560BF",
                 },
               }).showToast();
+
             await cargarAsistencias();
 
         }
@@ -82,7 +83,7 @@ async function cargarAsistencias() {
         let response = await fetch('http://localhost:8080/api/asistencia/getAllAsistencia');
         if (response.ok) {
             let asistencias = await response.json();
-            mostrarAsistencias(asistencias.reverse());
+            mostrarAsistencias(asistencias);
         } else {
             console.error('Error al obtener las asistencias:', response.status);
         }
@@ -93,10 +94,9 @@ async function cargarAsistencias() {
 
 function mostrarAsistencias(asistencias) {
     var tablaBody = document.querySelector('#tabla-asistencias tbody');
-    tablaBody.innerHTML = ''; 
+    tablaBody.innerHTML = '';
 
-    for (let i = asistencias.length - 1; i >= 0; i--) {
-        var asistencia = asistencias[i];
+    asistencias.forEach(asistencia => {
         var row = document.createElement('tr');
         row.innerHTML = `
             <td>${asistencia.nombreUsuario}</td>
@@ -107,9 +107,11 @@ function mostrarAsistencias(asistencias) {
                 <button role="button" class="button-eliminar" onclick="eliminarAsistencia(${asistencia.id})">Eliminar</button>
             </td>
         `;
+        // Insertar la nueva asistencia en la primera posición
         tablaBody.insertBefore(row, tablaBody.firstChild);
-    }
+    });
 }
+
 
 async function eliminarAsistencia(idAsistencia) {
     try {
