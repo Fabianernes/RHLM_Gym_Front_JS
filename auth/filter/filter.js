@@ -12,7 +12,18 @@ document.addEventListener("DOMContentLoaded", function() {
         } else if (fecha) {
             fetchAsistenciasByFecha(fecha);
         } else {
-            alert("Por favor, ingrese un documento o una fecha.");
+            Toastify({
+                text: "Por favor, ingrese un documento o una fecha.",
+                position: "top-center",
+                className: "info",
+                duration: 4000,
+
+                style: {
+                  background: "#dc3545",
+                },
+              }).showToast();
+
+            
         }
     });
 
@@ -21,8 +32,17 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch(`http://localhost:8080/api/asistencia/findAsistenciaByDocument?identificacion=${documento}`)
             .then(response => {
                 if (response.status === 204) {
-                    mensajeError.innerText = 'No se encontraron asistencias para el documento ingresado.';
-                    mensajeError.style.color = 'red';
+
+                    Toastify({
+                        text: 'No se encontraron asistencias para el documento ingresado.',
+                        className: "info",
+                        duration: 4000,
+                        position: "top-center",
+                        style: {
+                          background: "#dc3545",
+                        },
+                      }).showToast();
+
                     var data = []
                     displayAsistencias(data);
                     return [];
@@ -47,8 +67,17 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch(`http://localhost:8080/api/asistencia/findAsistenciaByFecha?fechaLlegada=${fecha}`)
             .then(response => {
                 if (response.status === 204) {
-                    console.log(response.status)
-                    mensajeError.style.color = 'red';
+
+                    Toastify({
+                        text: 'No se encontraron asistencias para la fecha ingresada.',
+                        className: "info",
+                        position: "top-center",
+                        duration: 4000,
+                        style: {
+                          background: "#dc3545",
+                        },
+                      }).showToast();
+
                     var data = []
                     displayAsistencias(data);
                     return [];

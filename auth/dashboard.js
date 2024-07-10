@@ -1,38 +1,24 @@
-// async function validarDocumento() {
-//     var documento = document.getElementById('documento').value;
-//     var mensajeError = document.getElementById('mensaje-error');
 
-//     try {
-//         let response = await fetch('http://localhost:8080/api/asistencia', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/x-www-form-urlencoded'
-//             },
-//             body: new URLSearchParams({ identificacion: documento })
-//         });
-
-//         if (response.ok) {
-//             await cargarAsistencias();
-//             mensajeError.innerText = ''; // Limpiamos el mensaje de error si todo va bien
-//         } else {
-//             let result = await response.json();
-//             mensajeError.innerText = result.message || 'Error al procesar la solicitud. Por favor, inténtelo de nuevo.';
-//         }
-//     } catch (error) {
-//         mensajeError.innerText = 'Error en la conexión con el servidor. Por favor, inténtelo de nuevo.';
-//     }
-// }
 
 async function validarDocumento() {
     var documento = document.getElementById('documento').value;
     var mensajeError = document.getElementById('mensaje-error');
+    mensajeError.style.visibility = 'visible';
+    mensajeError.style.fontSize = '27px';
+    mensajeError.innerText = '';
+    
 
     if (!documento || isNaN(documento)) {
-        mensajeError.innerText = 'Recuerda ingresar solamente tu documento.';
-        mensajeError.style.color = 'red';
-        setTimeout(()=> {
-            mensajeError.style.display = 'none';
-        }, 4000);
+
+        Toastify({
+            text: 'Recuerda ingresar solamente tu documento.',
+            className: "info",
+            duration: 4000,
+            position: "top-center",
+            style: {
+              background: "#dc3545",
+            },
+          }).showToast();
         return;
     }
 
@@ -50,22 +36,44 @@ async function validarDocumento() {
             let result = await response.json();
             let diasRestantes = result.diasRestantes;
 
-            // Mostrar mensaje de éxito
-            mensajeError.innerText = `Sigue, te quedan ${diasRestantes} días para seguir entrenando. 💪🏼🏋🏽`;
-            mensajeError.style.color = 'green'; 
-            setTimeout(()=> {
-                mensajeError.style.display = 'none';
-            }, 4000);
+            Toastify({
+                text: `Sigue, te quedan ${diasRestantes} días para seguir entrenando. 💪🏼🏋🏽`,
+                className: "info",
+                duration: 4000,
+                position: "top-center",
+                style: {
+                  background: "#5560BF",
+                },
+              }).showToast();
+            await cargarAsistencias();
 
-        } else {
+        }
+         
+        else {
             let result = await response.json();
-            mensajeError.innerText = result.message || 'Error al procesar la solicitud. Por favor, inténtelo de nuevo.';
-            mensajeError.style.color = 'red'; 
+            Toastify({
+                text: result.message || 'Error al procesar la solicitud. Por favor, inténtelo de nuevo.',
+                className: "info",
+                duration: 4000,
+                position: "top-center",
+                style: {
+                  background: "#dc3545",
+                },
+              }).showToast();
         }
     } catch (error) {
-        mensajeError.innerText = 'Error en la conexión con el servidor. Por favor, inténtelo de nuevo.';
-        mensajeError.style.color = 'red'; 
+
+        Toastify({
+            text: 'Error en la conexión con el servidor. Por favor, inténtelo de nuevo.',
+            className: "info",
+            position: "top-center",
+            duration: 4000,
+            style: {
+              background: "#dc3545",
+            },
+          }).showToast();
     }
+
 }
 
 
